@@ -1,0 +1,2 @@
+s = 'string of type'
+puts s
