@@ -1,6 +1,7 @@
 # Запустить cmd with ruby -> прописать путь, для запуска программы необх наборать ruby test.rb
 # Для непосредственного использования консоли необходимо прописать irb
-
+# def - метод
+# получение свойств у методов "text".methods
 
 =begin
 def met(variable = "world")
@@ -9,12 +10,6 @@ end
 
 met()
 =end
-
-def new(variable = "one")
-	puts "this is #{variable}"
-end
-
-new("two")
 
 
 class Greeter
@@ -97,12 +92,26 @@ object = Greeter.new("Den")
 
 
 
-def method(a)
-	a.each do |a|
-		puts "some #{a}"
-	end
-end
+# переменная Dasha не изменяется, изменяется лишь ссылка на переменную (поэтому выводится Masha),
+# метод clone позволяет использовать клон данной переменной, в то время как самма переменная
+# остается не изменной. (копии объектов можно создавать методом .dup)
+=begin
+girlfriend = "Dasha"
+goes_on_a_visit = girlfriend.clone
+puts girlfriend
+goes_on_a_visit[0] = "M"
+puts girlfriend
+=end
+# *большинство методов, при присваивании переменным, сами создают клон!
+# здесь Ruby создаст объект с новым значением и поместит в (уже существующую) переменную ссылку на объект
+=begin
+goes_on_a_visit = "Maks"
+puts girlfriend
+=end
 
-# b = [1, 2, 3, 4, 5]
-# method(b)
+
+# СТРОКИ метод to_s - преобразует в строку
+# АССОЦИАТИВНЫЕ МАССИВЫ 
+a_array = {'one'=>"two"}
+puts a_array["one"] #выведет two
 
