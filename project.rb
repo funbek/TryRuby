@@ -111,6 +111,7 @@ puts girlfriend
 
 
 # СТРОКИ метод to_s - преобразует в строку
+
 # АССОЦИАТИВНЫЕ МАССИВЫ 
 a_array = {'one'=>"two"}
 a_array["one"] #выведет two
@@ -202,9 +203,61 @@ arr.shift
 # .map{0} - обнуляет все элеметны массива, .map{|elem| elem.**2} - возводит в степень каждый элемент массива
 # чтобы был сохранены новые элементы в массив нужно добавить map!
 arr = [1,2,3,4,5]
- arr.map!{|index| index**3}
+ arr.map!{|index| index**2}
  arr
 
  # .find_all - находит все элементы соответствующие правилу
-puts arr.find_all{|index| index % 2 == 0} #.zero - проверка на равенство нулю (elem % 2).zero? -проверка на четность
+ arr.find_all{|index| index % 2 == 0} #.zero - проверка на равенство нулю (elem % 2).zero? -проверка на четность
+
 # методы .odd? .even? - четность или не четность
+ arr
+ arr.find_all{|index| index.even?}
+
+# .inject(0) "result = 0"- позволяет находить произведение/сумму всех элементов массива.
+ arr.inject(0){|result, elem| result * elem}
+
+# нахождение суммы всех отрицательных чисел массива!!!
+ arr = Array.new(10){|index| index = rand(-5..5)}
+sum_negative_el_arr = arr.find_all{|index| index < 0}.inject(0){|one, two| one + two}
+ "the sum of elements = #{sum_negative_el_arr}"
+
+# Итератор .partition делит массив на две части по некоторому бинарному признаку (чётности, положительности, наличию высшего образования и тому подобным).
+# делим массив по признаку кратности трем
+arr = [1,2,3,4,5,6,7,8,9]
+ arr.partition{|x| (x%3).zero?}
+# размещаем полученный массив в две переменные
+one, two = arr.partition{|x| (x%2).zero?}
+ one
+ two
+
+# Проверка всех .all
+ arr.all?{|elem| elem > 0}
+# Провурка хотя бы один .any
+ arr.any?{|elem| elem > 8}
+
+# сортировка по убыванию без .reverse
+arr = [1,3,2,5,7,4,6]
+ arr.sort{|a, b| a <=> b}
+
+# АССОЦИАТИВНЫЕ МАССИВЫ
+hash = {5=>3, 1=>6, 3=>2}
+ hash[5]
+ hash[1]
+
+# колличество использования каждой цифры
+asoc_arr = [1, 2, 1, 2, 3, 2, 1, 2, 4, 5]
+ asoc_arr.inject(Hash.new{0}){|result, i|
+	result[i] += 1
+	result
+}
+
+# получение ключа .key
+asoc_arr = {1=>4, 5=>3, 2=>2}
+ asoc_arr.keys
+# получение значения .values
+
+ asoc_arr.max_by{|key, value| value}
+
+# СТРОКИ
+arr = [1,2,3,4]
+puts "This is text and = #{arr.join(", ")}"
