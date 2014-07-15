@@ -239,6 +239,8 @@ one, two = arr.partition{|x| (x%2).zero?}
 arr = [1,3,2,5,7,4,6]
  arr.sort{|a, b| a <=> b}
 
+
+
 # АССОЦИАТИВНЫЕ МАССИВЫ
 hash = {5=>3, 1=>6, 3=>2}
  hash[5]
@@ -258,6 +260,49 @@ asoc_arr = {1=>4, 5=>3, 2=>2}
 
  asoc_arr.max_by{|key, value| value}
 
+
+
 # СТРОКИ
 arr = [1,2,3,4]
-puts "This is text and = #{arr.join(", ")}"
+# puts "This is text and = #{arr.join(", ")}"
+
+# запись числа в двоичном виде
+number = 1234
+ "В двоичном виде #{number.to_s(2)}"
+# или 
+ "в двоичном виде %b" %number
+# multiply
+ years = 80
+  " test " * years
+
+# Преобразование в массив .split
+ a = "re-re-re-re-re".split('-')
+# преобразование из массива в строку с выбранным разделителем .join = to_s или * (разделитель)
+ # a.join(' - ')
+ # a * ' - '
+ ["re","re"] * 2 * ' - '
+
+ "that is text".size
+
+# Получение подстроки
+text = "that is big text"
+ text[0..3]
+ text[7...-1]
+ text[2..2] # - выдаст символ  или text[2]
+
+# .sub замена подстроки в строке (одна), gsub (все)
+ str = "жыло-было шыбко шыпящее жывотное"
+ str.sub("жы", "жи")
+ str.gsub("жы","жи").gsub("шы","ши")
+
+ # .scan("sd") -поиск по селектору
+ str.scan("жы").size
+
+
+
+
+
+# ------------------------------------- МЕТОДЫ -------------------------------------
+puts str = "    some string with spaces   "
+puts str.strip!
+puts str
