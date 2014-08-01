@@ -286,6 +286,7 @@ arr = []
 
 t = Time.now # новый объект Time
 t+10 # добавляем 10 секунд
+ Time.mktime(2000, 1, 1)          #  Двухтысячный год (Y2K)
 
 require 'date'
 d = Date.today
@@ -324,3 +325,30 @@ arr_to_sum = [10, 2, 10, 7]
 # (1..3).map{|i| ; puts i}
 # puts i
 
+
+
+# ------------------------------------- OTHER -------------------------------------
+
+# puts, gets - выводит строку и получает строку от пользователя
+# .chomp - удаляет пробелы после введеного слова
+puts "your name is:"
+name = gets.chomp
+puts "your name is #{name}"
+
+
+puts Math::PI
+puts Math::E
+puts Math.cos(Math::PI/3)
+puts Math.tan(Math::PI/4)
+puts Math.log(Math::E**2)
+puts (1 + Math.sqrt(5))/2
+
+
+# ------------------------------------- ЦИКЛЫ -------------------------------------
+
+command = ''
+
+while command != 'пока'
+  puts command
+  command = gets.chomp
+end
