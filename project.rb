@@ -1,3 +1,6 @@
+#!/bin/env ruby
+# encoding: utf-8
+
 # Запустить cmd with ruby -> прописать путь, для запуска программы необх наборать ruby test.rb
 # Для непосредственного использования консоли необходимо прописать irb
 # def - метод
@@ -331,24 +334,49 @@ arr_to_sum = [10, 2, 10, 7]
 
 # puts, gets - выводит строку и получает строку от пользователя
 # .chomp - удаляет пробелы после введеного слова
-puts "your name is:"
-name = gets.chomp
-puts "your name is #{name}"
+#  "your name is:"
+# name = gets.chomp
+#  "your name is #{name}"
 
 
-puts Math::PI
-puts Math::E
-puts Math.cos(Math::PI/3)
-puts Math.tan(Math::PI/4)
-puts Math.log(Math::E**2)
-puts (1 + Math.sqrt(5))/2
+ Math::PI
+ Math::E
+ Math.cos(Math::PI/3)
+ Math.tan(Math::PI/4)
+ Math.log(Math::E**2)
+ (1 + Math.sqrt(5))/2
 
 
 # ------------------------------------- ЦИКЛЫ -------------------------------------
 
 command = ''
 
-while command != 'пока'
-  puts command
-  command = gets.chomp
+# while command != 'пока'
+#   puts command
+#   command = gets.chomp
+# end
+
+
+
+# ------------------------------------- TRY -------------------------------------
+
+def botles_beer(botle=0)
+	if botle == 0
+		puts "Sorry, this is empty bottles"
+	else
+		while botle != 0 do
+			if botle == 3
+				botle -= 1
+			else
+				puts "I have #{botle} in my shelf"
+				botle -= 1
+			end
+		end
+	end
+	puts "Opps, i take one"
+	puts "And that is all"
 end
+
+
+number = gets.chomp.to_i
+botles_beer(number)
