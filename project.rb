@@ -359,24 +359,58 @@ command = ''
 
 
 # ------------------------------------- TRY -------------------------------------
+# botles_beer - метод вывода сообщений и удаления бутылок
+# call_number - метод проверки правильности введеных данных пользователем
 
-def botles_beer(botle=0)
+
+
+# проверка, если все же пользователь ввел правильные данные
+def botles_beer(botle)
 	if botle == 0
 		puts "Sorry, this is empty bottles"
-	else
-		while botle != 0 do
+	elsif botle > 3
+		while botle != 0
 			if botle == 3
 				botle -= 1
+			elsif botle > 1
+				puts "I have #{botle} botles in my shelf"
+				botle -= 1
 			else
-				puts "I have #{botle} in my shelf"
+				puts "I have #{botle} botle in my shelf"
+				botle -= 1
+			end
+		end
+		puts "Opps, i take one"
+	else
+		while botle != 0
+			if botle > 1
+				puts "I have #{botle} botles in my shelf"
+				botle -= 1
+			else
+				puts "I have #{botle} botle in my shelf"
 				botle -= 1
 			end
 		end
 	end
-	puts "Opps, i take one"
 	puts "And that is all"
+	time_to_start = 1
 end
 
+# проверка на число, если = 0 то не число, если = 0 то число
+def call_number(number)
+	if number == 0
+		puts "You're dump, try again, write the NUMBER!!!"
+	else
+		botles_beer(number)
+	end
+end
 
+# запускаем програму
+time_to_start = 0
+while time_to_start == 0
+	puts "Please, entered the number"
+	number = gets.chomp.to_i
+	call_number(number)
+	break if time_to_start != 0
+end
 number = gets.chomp.to_i
-botles_beer(number)
