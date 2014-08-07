@@ -366,7 +366,7 @@ command = ''
 
 # проверка, если все же пользователь ввел правильные данные
 def botles_beer(botle)
-	if botle == 0
+	if botle == 0 or botle < 0
 		puts "Sorry, this is empty bottles"
 	elsif botle > 3
 		while botle != 0
