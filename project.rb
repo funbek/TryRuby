@@ -1,4 +1,4 @@
-#!/bin/env ruby
+d#!/bin/env ruby
 # encoding: utf-8
 
 # Запустить cmd with ruby -> прописать путь, для запуска программы необх наборать ruby test.rb
