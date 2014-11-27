@@ -365,53 +365,88 @@ command = ''
 
 
 # проверка, если все же пользователь ввел правильные данные
-def botles_beer(botle)
-	if botle == 0 or botle < 0
-		puts "Sorry, this is empty bottles"
-	elsif botle > 3
-		while botle != 0
-			if botle == 3
-				botle -= 1
-			elsif botle > 1
-				puts "I have #{botle} botles in my shelf"
-				botle -= 1
-			else
-				puts "I have #{botle} botle in my shelf"
-				botle -= 1
-			end
-		end
-		puts "Opps, i take one"
-	else
-		while botle != 0
-			if botle > 1
-				puts "I have #{botle} botles in my shelf"
-				botle -= 1
-			else
-				puts "I have #{botle} botle in my shelf"
-				botle -= 1
-			end
-		end
-	end
-	puts "And that is all"
-	time_to_start = 1
-end
+# def botles_beer(botle)
+# 	if botle == 0 or botle < 0
+# 		puts "Sorry, this is empty bottles"
+# 	elsif botle > 3
+# 		while botle != 0
+# 			if botle == 3
+# 				botle -= 1
+# 			elsif botle > 1
+# 				puts "I have #{botle} botles in my shelf"
+# 				botle -= 1
+# 			else
+# 				puts "I have #{botle} botle in my shelf"
+# 				botle -= 1
+# 			end
+# 		end
+# 		puts "Opps, i take one"
+# 	else
+# 		while botle != 0
+# 			if botle > 1
+# 				puts "I have #{botle} botles in my shelf"
+# 				botle -= 1
+# 			else
+# 				puts "I have #{botle} botle in my shelf"
+# 				botle -= 1
+# 			end
+# 		end
+# 	end
+# 	puts "And that is all"
+# 	time_to_start = 1
+# end
 
 
 # проверка на число, если = 0 то не число, если = 0 то число
-def call_number(number)
-	begin
-		botles_beer(Integer(number))
-	rescue
-		puts "You're dumb. Try again. Enter a NUMBER!!!"
-	end
-end
+# def call_number(number)
+# 	begin
+# 		botles_beer(Integer(number))
+# 	rescue
+# 		puts "You're dumb. Try again. Enter a NUMBER!!!"
+# 	end
+# end
 
 # запускаем програму
-time_to_start = 0
-while time_to_start == 0
-	puts "Please, enter a number"
-	number = gets.chomp
-	call_number(number)
-	break if time_to_start != 0
-end
-number = gets.chomp.to_i
+# time_to_start = 0
+# while time_to_start == 0
+# 	puts "Please, enter a number"
+# 	number = gets.chomp
+# 	call_number(number)
+# 	break if time_to_start != 0
+# end
+# number = gets.chomp.to_i
+
+
+
+	# Открытие файла и задание файла
+# File.open("README.md") do |f|
+# 	line = f.readline
+# 	puts line
+# end
+
+
+	# Все операторы это выражения
+x = 10
+y = 11
+# minimum = if x < y 
+# 	then
+# 		x 
+# 	else
+# 		y
+# end
+# puts minimum
+
+
+# max = x > y ? x : y
+# puts max
+
+
+
+module Sudoku
+	
+
+
+
+
+require 'sudoku'
+puts Sudoku.solve(Sudoku::Puzzle.ne(ARGF.readlines))
